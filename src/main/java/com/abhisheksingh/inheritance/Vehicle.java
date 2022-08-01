@@ -1,4 +1,4 @@
-package com.abhisheksingh;
+package com.abhisheksingh.inheritance;
 
 public class Vehicle {
 
@@ -8,23 +8,23 @@ public class Vehicle {
     private  int currentDirection;
 
 
-    public Vehicle(String name, String size, int currentVelocity, int currentDirection) {
+    public Vehicle(String name, String size) {
         this.name = name;
         this.size = size;
         this.currentVelocity = 0;
         this.currentDirection = 0;
     }
 
-    private void steer (int direction)
+    public void steer (int direction)
     {
         this.currentDirection+=direction;
-        System.out.println("Vehicle.steer(): Steering at" + currentDirection + "degrees.");
+        System.out.println(" Vehicle Steering at " + currentDirection + " degrees. ");
     }
 
-    private void move (int velocity , int direction){
+    public void move (int velocity , int direction){
         currentVelocity=velocity;
         currentDirection=direction;
-        System.out.println("Vehicle.move(): Moving at " + currentVelocity + "in direction" + currentDirection);
+        System.out.println(" Vehicle Moving at " + currentVelocity + " in direction " + currentDirection);
     }
 
     public String getName() {
@@ -41,5 +41,9 @@ public class Vehicle {
 
     public int getCurrentDirection() {
         return currentDirection;
+    }
+
+    public void stop() {
+        this.currentVelocity=0;
     }
 }
